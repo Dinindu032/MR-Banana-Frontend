@@ -1,0 +1,98 @@
+/* Leaderboard Container */
+.leaderboard-container1 {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: linear-gradient(135deg, #f3f3f3, #e1e1e1);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    font-family: "Arial", sans-serif;
+  }
+  
+  /* Title Styling */
+  .leaderboard-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Table Styling */
+  .leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .leaderboard-table th,
+  .leaderboard-table td {
+    text-align: left;
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  /* Header Styling */
+  .leaderboard-table th {
+    background-color: #444;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 1px;
+  }
+  
+  /* Alternating Row Colors */
+  .leaderboard-table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .leaderboard-table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+  
+  /* Row Hover Effect */
+  .leaderboard-table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Highlight Top 3 Players */
+  .rank-1 td {
+    font-weight: bold;
+    background-color: #ffd700; /* Gold */
+    color: #333;
+  }
+  
+  .rank-2 td {
+    font-weight: bold;
+    background-color: #c0c0c0; /* Silver */
+    color: #333;
+  }
+  
+  .rank-3 td {
+    font-weight: bold;
+    background-color: #cd7f32; /* Bronze */
+    color: #333;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .leaderboard-container1 {
+      padding: 10px;
+    }
+  
+    .leaderboard-title {
+      font-size: 2rem;
+    }
+  
+    .leaderboard-table th,
+    .leaderboard-table td {
+      font-size: 0.9rem;
+      padding: 10px;
+    }
+  }
+
+  .no-players-message {
+    text-align: center;
+    color: #666;
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }

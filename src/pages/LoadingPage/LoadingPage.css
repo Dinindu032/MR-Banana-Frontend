@@ -1,0 +1,29 @@
+.loading-page-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  
+  .loading-title {
+    margin: 20px 0 0;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .loading-bar-container {
+    width: 50%;
+    height: 30px;
+    background-color: #4CAF51;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  
+  .loading-bar {
+    height: 100%;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+  }
+  

@@ -1,0 +1,107 @@
+/* Ensure the content takes the full viewport height and centers the image */
+.banana-game-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column; /* This makes elements stack vertically */
+  align-items: center;
+  height: 100vh; /* Full viewport height */
+  /* background-color: #fdee72; */
+}
+
+.banana-image {
+  max-width: 90%; /* Ensure the image doesn't exceed the viewport width */
+  max-height: 90%; /* Ensure the image doesn't exceed the viewport height */
+  object-fit: contain; /* Keep the aspect ratio */
+  margin-bottom: 40px; /* Increase the margin for more space */
+}
+
+.answer-placeholder {
+  color: rgb(125, 55, 255); /* Example color change */
+  font-weight: bold; /* Example for boldness */
+  text-align: center; /* Center text horizontally */
+  margin-bottom: 40px; /* Increase the margin for more space */
+  width: 300px; /* Adjust the width as needed */
+  height: 65px; /* Adjust the height as needed */
+  font-size: 20px; /* Adjust the font size as needed */
+}
+
+.next-button {
+  background-color: green; /* Example color change */
+  border: none; /* Remove default border */
+  padding: 10px 20px; /* Add padding for better look */
+  border-radius: 5px; /* Add rounded corners */
+  cursor: pointer; /* Indicate clickable button */
+  color: white; /* Add white text color for better contrast */
+  width: 150px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+}
+
+body {
+  background-image: url('src/assets/banana-background.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Popup container styling */
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Ensure it appears above other content */
+  animation: fadeIn 0.3s ease-out;
+}
+
+.popup-message {
+  background-color: #4CAF50;
+  padding: 20px 40px;
+  border-radius: 10px;
+  color: white;
+  text-align: center;
+  max-width: 400px;
+  width: 80%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.popup-message h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* Styling for incorrect answer popup */
+.popup-message.error {
+  background-color: #FF6347; /* Red background for wrong answer */
+}
+
+.popup-close-button {
+  background-color: #FF6347;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.popup-close-button:hover {
+  background-color: #FF4500; /* Darker red on hover */
+}
+
+/* Animation for popup */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

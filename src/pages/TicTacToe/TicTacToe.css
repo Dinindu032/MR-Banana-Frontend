@@ -1,0 +1,293 @@
+.container{
+    text-align: center;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+
+ }
+
+ /* .scoreboard {
+    width: 200px;
+    padding: 20px;
+    background-color: #1f3540;
+    color: #26ffcb;
+    border-radius: 10px;
+    text-align: left;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+  }
+
+  .scoreboard h3 {
+    margin-top: 0;
+    text-align: center;
+  }
+  
+  .scoreboard p {
+    margin: 5px 0;
+    font-size: 18px;
+  } */
+
+  .scoreboard {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .scoreboard h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .scoreboard p {
+    margin: 0;
+  }
+
+ .title{
+    margin-top: 50px;
+    color: rgb(0, 0, 0);
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+
+ }
+
+ .title span{
+    color: #f50202;
+    padding-left: 15px;
+ }
+
+.reset{
+    width: 250px;
+    height: 100px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50px;
+    background: #1f3540;
+    font-size: 26px;
+    color: #26ffcb;
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+
+.boxes{
+    display: flex;
+    height: 180px;
+    width: 180px;
+    background: #1f3540;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+.board{
+height: 600px;
+width: 564px;
+display: flex;
+margin: auto;
+}  
+
+.boxes img{
+    margin: 50px 50px;
+}
+
+.timer-box {
+    position: fixed;
+    bottom: 800px;
+    left: 140px;
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    font-weight: bold;
+    z-index: 1000;
+  }
+  
+  .time-up-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: white;
+    padding: 20px 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    animation: scaleUp 0.3s ease-in-out;
+  }
+  
+  .modal-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #f44336; /* Red for emphasis */
+  }
+  
+  .modal-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .modal-content button {
+    background-color: #4caf50; /* Green */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+  }
+  
+  .modal-content button:hover {
+    background-color: #45a049;
+  }
+  
+  /* Optional animation for modal appearance */
+  @keyframes scaleUp {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+  
+
+
+  .result-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dim background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background: #ffffff;
+    padding: 30px 50px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: popUp 0.5s ease-in-out;
+  }
+  
+  .modal-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #26ffcb; /* Vibrant green for emphasis */
+  }
+  
+  .modal-content button {
+    background-color: #1f3540;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+  }
+  
+  .modal-content button:hover {
+    background-color: #26ffcb;
+    color: #1f3540;
+  }
+  
+  @keyframes popUp {
+    from {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  /* Add custom cursor style */
+body.banana-cursor {
+    cursor: url('../assets/PRO banana dancer.ani'), auto;  /* Change the path to where you saved your banana cursor image */
+  }
+  
+  /* Other existing CSS */
+  .level-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+  
+
+  .popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .popup h2 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+  }
+  
+  .popup p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .view-leaderboard-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background: #4caf50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .view-leaderboard-btn:hover {
+    background: #45a049;
+  }
+  
+  
+  
+  
+  
+  

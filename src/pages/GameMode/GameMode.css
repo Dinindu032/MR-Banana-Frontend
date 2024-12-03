@@ -1,0 +1,75 @@
+/* General Grid Layout */
+.level-grid1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 120px;
+    padding: 200px;
+  }
+  
+  /* Game Mode Containers */
+  .game-mode-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .game-mode-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Individual Mode Styles */
+  .easy-mode {
+    background-color: #5e3bc3;
+    color: white;
+  }
+  
+  .medium-mode {
+    background-color: #4a5246;
+    color: white;
+  }
+  
+  .difficult-mode {
+    background-color: #8e334f;
+    color: white;
+  }
+  
+  .hard-mode {
+    background-color: #a20d18;
+    color: white;
+  }
+  
+  /* Game Titles */
+  .game-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .game-time {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Play Button */
+  .start-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    background-color: #4caf50;
+    color: #ffffff;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .start-button:hover {
+    background-color: #77a4f8;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
