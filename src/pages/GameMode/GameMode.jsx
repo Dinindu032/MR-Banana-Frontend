@@ -47,46 +47,69 @@
 // export default GameMode;
 
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "./GameMode.css";
-import { Link } from "react-router-dom";
 
 const GameMode = () => {
+  const navigate = useNavigate();
+
+  const setMode = (mode) => {
+    localStorage.setItem("mode", mode);
+    navigate("/game-page");
+  };
+
   return (
     <div className="level-grid1">
       {/* Easy Mode */}
       <div className="game-mode-container easy-mode">
         <h1 className="game-title">EASY MODE</h1>
         <h2 className="game-time">50 Seconds</h2>
-        <Link to="/game-page" className="start-button">
+        <div
+          to="/game-page"
+          className="start-button"
+          onClick={() => setMode(50)}
+        >
           PLAY
-        </Link>
+        </div>
       </div>
 
       {/* Medium Mode */}
       <div className="game-mode-container medium-mode">
         <h1 className="game-title">MEDIUM MODE</h1>
         <h2 className="game-time">45 Seconds</h2>
-        <Link to="/game-page" className="start-button">
+        <div
+          to="/game-page"
+          className="start-button"
+          onClick={() => setMode(45)}
+        >
           PLAY
-        </Link>
+        </div>
       </div>
 
       {/* Difficult Mode */}
       <div className="game-mode-container difficult-mode">
         <h1 className="game-title">DIFFICULT MODE</h1>
         <h2 className="game-time">30 Seconds</h2>
-        <Link to="/game-page" className="start-button">
+        <div
+          to="/game-page"
+          className="start-button"
+          onClick={() => setMode(30)}
+        >
           PLAY
-        </Link>
+        </div>
       </div>
 
       {/* Hard Mode */}
       <div className="game-mode-container hard-mode">
         <h1 className="game-title">HARD MODE</h1>
         <h2 className="game-time">10 Seconds</h2>
-        <Link to="/game-page" className="start-button">
+        <div
+          to="/game-page"
+          className="start-button"
+          onClick={() => setMode(10)}
+        >
           PLAY
-        </Link>
+        </div>
       </div>
     </div>
   );

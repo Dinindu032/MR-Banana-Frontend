@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import WelcomePage from "./pages/WelcomePage/WelcomePage";
+import sound from "./assets/hip-hop-202127.mp3"; // Adjusted the path to match typical folder structures.
+import GamePage from "./pages/GamePage/GamePage";
+import GameStartPage from "./pages/GameStartPage/GameStartPage";
+import LoadingPage from "./pages/LoadingPage/LoadingPage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import SignUpPage from "./pages/SignUpPage/SignUpPage";
-import LoadingPage from "./pages/LoadingPage/LoadingPage";
-import GameStartPage from "./pages/GameStartPage/GameStartPage";
-import GamePage from "./pages/GamePage/GamePage";
-import sound from "./assets/hip-hop-202127.mp3"; // Adjusted the path to match typical folder structures.
-import cursor from "./assets/banana1.png";
-import GameMode from "./pages/GameMode/GameMode";
-import TicTacToe from "./pages/TicTacToe/TicTactoe";
-import Leaderboard from "./pages/Leaderboard/Leaderboard";
+import WelcomePage from "./pages/WelcomePage/WelcomePage";
+// import cursor from "./assets/banana1.png";
 import "./App.css";
+import GameMode from "./pages/GameMode/GameMode";
+import Leaderboard from "./pages/Leaderboard/Leaderboard";
+import TicTacToe from "./pages/TicTacToe/TicTactoe";
 
 const App = () => {
   const [cursor, setCursor] = useState("default"); // State for cursor style

@@ -1,8 +1,8 @@
+import axios from "axios";
 import React, { useState } from "react";
 import { FaLock } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
 import { MdEmail } from "react-icons/md";
-import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
 import "./LoginPage.css";
 
 const LoginPage = () => {
@@ -21,6 +21,7 @@ const LoginPage = () => {
       })
       .then((response) => {
         if (response.data.status) {
+          localStorage.setItem("user", JSON.stringify(response.data.data));
           navigate("/loading");
         }
       })

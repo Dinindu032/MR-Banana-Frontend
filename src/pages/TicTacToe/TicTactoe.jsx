@@ -1,15 +1,15 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./TicTacToe.css";
 import banana_icon from "../../assets/Banana.jpg";
 import tomato_icon from "../../assets/Tomato.jpg";
+import "./TicTacToe.css";
 
 const TicTacToe = () => {
   const [board, setBoard] = useState(Array(9).fill(""));
   const [lock, setLock] = useState(false);
   const [bananaScore, setBananaScore] = useState(0);
   const [tomatoScore, setTomatoScore] = useState(0);
-  const [timer, setTimer] = useState(30);
+  const [timer, setTimer] = useState(localStorage.getItem("mode") ?? 30);
   const [isTimerRunning, setIsTimerRunning] = useState(true);
   const [result, setResult] = useState(null);
   const [showPopup, setShowPopup] = useState(false); // For time-up popup
@@ -68,7 +68,6 @@ const TicTacToe = () => {
           const newScore = bananaScore + 1;
           setBananaScore(newScore);
           setResult("banana");
-          saveBananaScore(newScore); // Save the score to the backend
         } else {
           setTomatoScore((prevScore) => prevScore + 1);
           setResult("tomato");
@@ -85,13 +84,16 @@ const TicTacToe = () => {
 
   const saveBananaScore = async (score) => {
     try {
+      const userObject = JSON.parse(localStorage.getItem("user"));
+      console.log(userObject);
+      const currentHighScore = userObject.score;
+      if (currentHighScore > score) return;
       const response = await fetch("http://localhost:3000/api/score", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`, // Assuming the token is stored in localStorage
         },
-        body: JSON.stringify({ bananaScore: score }),
+        body: JSON.stringify({ bananaScore: score, userId: userObject._id }),
       });
 
       if (!response.ok) {
@@ -115,11 +117,12 @@ const TicTacToe = () => {
     }
 
     if (timer === 0) {
+      saveBananaScore(bananaScore);
       setIsTimerRunning(false);
       setLock(true);
       setShowPopup(true); // Show popup when time is over
     }
-  }, [timer, isTimerRunning]);
+  }, [timer, isTimerRunning, bananaScore]);
 
   const resetGame = () => {
     setBoard(Array(9).fill(""));
